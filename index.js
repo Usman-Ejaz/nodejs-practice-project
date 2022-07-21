@@ -1,4 +1,5 @@
 const { app } = require('./config/server.js');
+require('./config/database');
 require('dotenv').config();
 
 // Import routes here
