@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 // Configuring body parser middleware
 app.use(bodyParser.urlencoded({
-    extended: false
+    extended: true
 }));
 app.use(bodyParser.json());
 

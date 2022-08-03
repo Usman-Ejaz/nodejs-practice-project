@@ -1,4 +1,7 @@
-const { app } = require('./config/server.js');
+const {
+    app
+} = require('./config/server.js');
+
 require('./config/database');
 require('dotenv').config();
 
@@ -14,5 +17,5 @@ app.use('/auth', authRoutes);
 app.use('/api/v1/', apiV1Routes);
 
 const server = app.listen(process.env.PORT || 2400, () => {
-    console.log('API server is listening');
+    console.log(`API server is listening on ${process.env.PORT}`);
 });
