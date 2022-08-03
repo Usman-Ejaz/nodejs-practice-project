@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
 const { STATUS_BAD_REQUEST, MSG_BAD_REQUEST } = require('./../constants');
+require('dotenv').config();
 
 function findUserById(id) {
     return {
@@ -11,10 +11,10 @@ function findUserById(id) {
 }
 
 module.exports = {
-    async verifyApiToken(req, res, next) {
-        const token = req.headers.authorization.replace('Bearer ', '');
-
+    async verifyApiToken(req, res, next) {        
         try {
+            const token = req.headers.authorization.replace('Bearer ', '');
+            
             const decode = jwt.verify(token, process.env.API_JWT_SECRET);
             const user = await findUserById(decode.id);         // Call this function from auth service or User Model.
             if (user) {

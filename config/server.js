@@ -6,7 +6,9 @@ const bodyParser = require('body-parser');
 // const cors = require('cors');
 
 // Configuring body parser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(bodyParser.json());
 
 const handlebars = require('express-handlebars');
@@ -23,4 +25,6 @@ app.engine('hbs', handlebars.engine({
 
 app.use(express.static('app/assets'));
 
-module.exports = { app };
+module.exports = {
+    app
+};
