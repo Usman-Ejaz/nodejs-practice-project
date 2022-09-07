@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const LoginController = require('../http/controllers/auth/LoginController');
+const LoginController = require('./../controllers/auth/LoginController');
 
 router.get('/', (req, res) => res.redirect('/auth/login'));
 

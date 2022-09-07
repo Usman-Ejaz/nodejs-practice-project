@@ -1,4 +1,6 @@
-const { createToken } = require('./../../../helpers/jwtHelpers');
+const {
+    createToken
+} = require('./../../../helpers/jwtHelpers');
 
 module.exports = {
     register(req, res) {

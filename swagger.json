@@ -1,0 +1,71 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "First Nodejs Application",
+        "description": "My First Nodejs Application",
+        "version": "1.0.0",
+        "contact": {
+            "email": "contact@nxb.com.pk",
+            "name": "NextBridge Private LTD."
+        }
+    },
+    "host": "localhost:8081",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Users",
+            "description": "This is users module apis"
+        }
+    ],
+    "paths": {
+        "/users": {
+            "get": {
+                "tags": ["Users"],
+                "summary": "Get all users",
+                "description": "Get all users",
+                "operationId": "getAllUsers"
+            },
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "$ref": "#/definitions/User"
+                    }
+                }
+            }
+        }
+    },
+
+    "definitons": {
+        "User": {
+            "required": ["_id", "name", "email", "_v", "createdAt", "updatedAt"],
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "_v": {
+                    "type": "integer"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string"
+                }
+            }
+        },
+        "Users": {
+            "type": "array",
+            "$ref": "#/definitions/User"
+        }
+    },
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"]
+}

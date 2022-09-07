@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const IndexController = require(`./../http/controllers/IndexController`);
+const IndexController = require(`./../controllers/IndexController`);
 
 router.get('/', IndexController.index);
 

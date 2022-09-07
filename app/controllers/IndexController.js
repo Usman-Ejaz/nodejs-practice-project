@@ -1,4 +1,4 @@
-const UserService = require('./../../services/UserService');
+const UserService = require('./../services/UserService');
 
 module.exports = {
     index: async (req, res) => {
@@ -6,7 +6,7 @@ module.exports = {
     },
 
     showAll: async (req, res) => {
-        res.json(await UserService.getAll());
+        res.json(await UserService.getAll()).status(304);
     },
 
     store: async (req, res) => {
