@@ -12,7 +12,7 @@ module.exports = {
     },
 
     /**
-     * @params
+     * @params { id }
      * 
      * @return boolean true|false
      */
