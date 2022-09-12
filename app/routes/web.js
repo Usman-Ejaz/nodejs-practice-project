@@ -13,6 +13,8 @@ router.get('/users/show/:id', IndexController.show);
 router.post('/users/:id', IndexController.update);
 router.delete('/users/delete/:id', IndexController.delete);
 
+router.get('/send-email', IndexController.sendEmail);
+
 /**
  * 
  * 
