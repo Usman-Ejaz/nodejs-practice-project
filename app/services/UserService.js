@@ -7,7 +7,7 @@ module.exports = {
      * 
      * @return boolean true|false
      */
-    getAll: async () => {
+    getAll: async() => {
         return await User.find({});
     },
 
@@ -16,7 +16,7 @@ module.exports = {
      * 
      * @return boolean true|false
      */
-    findById: async (id) => {
+    findById: async(id) => {
         return await User.findById(id);
     },
 
@@ -25,7 +25,7 @@ module.exports = {
      * 
      * @return boolean true|false
      */
-    create: async (data) => {
+    create: async(data) => {
         const user = User({
             name: data.name,
             email: data.email
@@ -44,7 +44,7 @@ module.exports = {
      * 
      * @return boolean true|false
      */
-    update: async (data, id) => {
+    update: async(data, id) => {
         try {
 
             const user = await User.updateOne({
@@ -65,7 +65,7 @@ module.exports = {
      * 
      * @return boolean true|false
      */
-    destroy: async (id) => {
+    destroy: async(id) => {
         try {
             await User.deleteOne({
                 _id: id

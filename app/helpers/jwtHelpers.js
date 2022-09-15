@@ -12,7 +12,7 @@ module.exports = {
     createToken(data) {
         return jwt.sign(data, process.env.API_JWT_SECRET, { expiresIn: 60 * 60 });
     },
-    
+
     /**
      *
      * 
@@ -22,7 +22,7 @@ module.exports = {
         try {
             const decode = jwt.verify(token, process.env.API_JWT_SECRET);
             return true;
-        } catch(e) {
+        } catch (e) {
             return false;
         }
     }
