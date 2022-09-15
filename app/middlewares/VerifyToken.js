@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken');
 const {
     STATUS_BAD_REQUEST,
-    MSG_BAD_REQUEST
-} = require('./../constants');
+    STATUS_MSG_BAD_REQUEST
+} = require('./../constants/custom.constants');
 
 require('dotenv').config();
 
@@ -26,12 +26,12 @@ module.exports = {
                 next();
             } else {
                 return res.status(STATUS_BAD_REQUEST).send({
-                    message: MSG_BAD_REQUEST
+                    message: STATUS_MSG_BAD_REQUEST
                 })
             }
         } catch (e) {
             return res.status(STATUS_BAD_REQUEST).send({
-                message: MSG_BAD_REQUEST
+                message: STATUS_MSG_BAD_REQUEST
             })
         }
     }

@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 require('dotenv').config();
 
-var transport = nodemailer.createTransport({
+var EmailConfigObject = nodemailer.createTransport({
     host: process.env.MAIL_HOST,
     port: process.env.MAIL_PORT,
     auth: {
@@ -11,5 +11,5 @@ var transport = nodemailer.createTransport({
 });
 
 module.exports = {
-    transport
+    EmailConfigObject
 }

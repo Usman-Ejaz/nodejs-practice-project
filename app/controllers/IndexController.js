@@ -1,35 +1,35 @@
 const UserService = require('./../services/UserService');
 const {
-    transport
+    EmailConfigObject
 } = require('./../../config/email');
 
 module.exports = {
-    index: async (req, res) => {
+    index: async(req, res) => {
         res.render('main');
     },
 
-    showAll: async (req, res) => {
+    showAll: async(req, res) => {
         res.json(await UserService.getAll()).status(304);
     },
 
-    store: async (req, res) => {
+    store: async(req, res) => {
         res.json(await UserService.create(req.body));
     },
 
-    show: async (req, res) => {
+    show: async(req, res) => {
         res.json(await UserService.findById(req.params.id));
     },
 
-    update: async (req, res) => {
+    update: async(req, res) => {
         res.json(await UserService.update(req.body, req.params.id));
     },
 
-    delete: async (req, res) => {
+    delete: async(req, res) => {
         res.json(await UserService.destroy(req.params.id));
     },
 
-    sendEmail: async (req, res) => {
-        const info = await transport.sendMail({
+    sendEmail: async(req, res) => {
+        const info = await EmailConfigObject.sendMail({
             from: `Usman Ejaz <usmanejaz49@gmail.com>`, // sender address
             to: "node@example.com", // list of receivers
             subject: "Hello, Test Node Email", // Subject line
